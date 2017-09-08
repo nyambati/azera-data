@@ -1,7 +1,7 @@
-const User = require('./User');
-const Category = require('./Category');
-const Reciept = require('./Reciept');
-const firebase = require('./firebase');
+const User = require('./generators/User');
+const Category = require('./generators/Category');
+const Reciept = require('./generators/Reciept');
+const firebase = require('./generators/firebase');
 const { dataConfig } = require('./config');
 
 // Generate users
