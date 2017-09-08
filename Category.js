@@ -4,18 +4,22 @@ class CategoriesNodeSeeder {
     constructor(firebase) {
         this.firebase = firebase;
     }
-
+    random(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
     model() {
+        const categories = ['TeenCode', 'FIR', 'DIR']
         return {
-            name: faker.lorem.word(),
+            name: categories[this.random(0, 2)],
             createdAt: this.firebase.database.ServerValue.TIMESTAMP,
             updateAt: this.firebase.database.ServerValue.TIMESTAMP
         }
     }
 
-    generate(numberOfCategories) {
-        const categories = this.firebase.database().ref('/categories');
-        for (let number = 0; number <= numberOfCategories; number++) {
+    generate() {
+        const categories = this.firebase.database().ref('categories');
+        categories.remove();
+        for (let number = 0; number <= 2; number++) {
             categories.push(this.model());
         }
         console.log('Done seeding categories');
