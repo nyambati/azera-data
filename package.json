@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "faker": "^4.1.0",
+    "firebase": "^4.3.1"
+  }
+}
