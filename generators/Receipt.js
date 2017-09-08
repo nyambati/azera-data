@@ -24,7 +24,7 @@ class RecieptsNodeSeeder {
     generate(numberOfReciepts) {
         const categories = ['TeenCode', 'FIR', 'DIR']
         const users = this.firebase.database().ref('/users');
-        const reciepts = this.firebase.database().ref('/reciepts')
+        const reciepts = this.firebase.database().ref('/receipts')
         reciepts.remove();
         users.once('value').then(snap => {
             let usersArray = [];

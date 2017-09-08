@@ -1,6 +1,6 @@
 const User = require('./generators/User');
 const Category = require('./generators/Category');
-const Reciept = require('./generators/Reciept');
+const Reciept = require('./generators/Receipt');
 const firebase = require('./generators/firebase');
 const { dataConfig } = require('./config');
 
@@ -20,4 +20,3 @@ catagories.generate();
 const reciepts = new Reciept(firebase);
 
 reciepts.generate(dataConfig.reciepts);
-
